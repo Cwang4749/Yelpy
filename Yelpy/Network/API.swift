@@ -15,6 +15,8 @@ struct API {
     
     static func getRestaurants(completion: @escaping ([[String:Any]]?) -> Void) {
         
+        //Client ID: FdzpByR-8gT59K7bUCpNvA
+        
         // ––––– TODO: Add your own API key!
         let apikey = "UeiWdyQ25K1Ys-NSOiXI6E77RZnnQwzJjG3AAQPRQrTqy1yUfLdZf_Y2B5iyUmxTEfpkfxfS3IYr3VAlRaxbc8gyPD72b6mklDwTZmVyw9sE_ECr0Ee-4rzHo35GYHYx"
         
