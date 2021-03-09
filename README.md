@@ -14,4 +14,4 @@ The following functionality is completed:
 
 Here's a walkthrough of implemented user stories:
 
-![](YelpyDemoPt1.gif)
+![](YelpyDemo.gif)
