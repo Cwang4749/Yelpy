@@ -18,7 +18,7 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     // –––––– TODO: Initialize restaurantsArray
-    var restaurantsArray: [[String:Any]] = []
+    var restaurantsArray: [Restaurant] = []
     
     
     // ––––– TODO: Add tableView datasource + delegate
@@ -54,16 +54,28 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
         
         let restaurant = restaurantsArray[indexPath.row]
         
-        cell.label.text = restaurant["name"] as? String ?? ""
+        /*cell.label.text = restaurant["name"] as? String ?? ""
         
         if let imageUrlString = restaurant["image_url"] as? String {
             let imageUrl = URL(string: imageUrlString)
             cell.restaurantImage.af_setImage(withURL: imageUrl!)
-        }
+        }*/
+        
+        cell.r = restaurant
         
         return cell
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell) {
+            let r = restaurantsArray[indexPath.row]
+            let detailsViewController = segue.destination as! RestaurantDetailViewController
+            detailsViewController.r = r
+        }
+        tableView.deselectRow(at: tableView.indexPath(for: cell)!, animated: true)
+    }
 
 }
 
